@@ -1,4 +1,4 @@
-# 멀티 스텝 폼
+# 멀티 스텝 폼
 
 - react with typescript
 - functional programming (함수형 프로그래밍)
