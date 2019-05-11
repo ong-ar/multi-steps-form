@@ -30,8 +30,17 @@
 
 ## 프로젝트 설치
 
+### create-react-app
+
 ```bash
 $ create-react-app multi-step-form --scripts-version=react-scripts-ts
+```
+
+### packages
+
+```bash
+# ie9 또는 버전이 오래된 브라우저를 위해 추가
+$ yarn add react-app-polyfill
 ```
 
 ## todo
