@@ -2,6 +2,7 @@ import * as React from "react";
 
 interface IProps {
   name: string;
+  value: string;
   disabled?: boolean;
   checked?: boolean;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -9,8 +10,9 @@ interface IProps {
 
 const CheckboxPresenter: React.SFC<IProps> = ({
   name,
-  disabled = false,
-  checked = false,
+  value,
+  disabled,
+  checked,
   onChange,
   children
 }) => {
@@ -21,7 +23,8 @@ const CheckboxPresenter: React.SFC<IProps> = ({
 
   const labelStyle: React.CSSProperties = {
     cursor: "pointer",
-    paddingLeft: 20
+    paddingLeft: 20,
+    paddingRight: 10
   };
 
   return (
@@ -29,6 +32,7 @@ const CheckboxPresenter: React.SFC<IProps> = ({
       <input
         type="checkbox"
         name={name}
+        value={value}
         disabled={disabled}
         checked={checked}
         onChange={onChange}
