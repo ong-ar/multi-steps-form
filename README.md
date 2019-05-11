@@ -41,6 +41,9 @@ $ create-react-app multi-step-form --scripts-version=react-scripts-ts
 ```bash
 # ie9 또는 버전이 오래된 브라우저를 위해 추가
 $ yarn add react-app-polyfill
+
+# 라우터 경로 설정을 위한 패키지
+$ yarn add react-router-dom && yarn add @types/react-router-dom --dev
 ```
 
 ## todo
