@@ -4,14 +4,16 @@ import Checkbox from "./Checkbox";
 interface IProps {
   name?: string;
   defaultValues?: string[];
-  onChange?: (checkedValue: string[]) => void;
+  onChange?: (checkedValue: string[], groupId?: string | number) => void;
+  groupId?: string | number;
 }
 
 const CheckboxGroup: React.FC<IProps> = ({
   name,
   defaultValues,
   onChange,
-  children
+  children,
+  groupId
 }) => {
   const [values, setValues] = React.useState<string[]>(defaultValues || []);
 
@@ -29,7 +31,7 @@ const CheckboxGroup: React.FC<IProps> = ({
 
     // CheckboxGroup onChange
     if (onChange) {
-      onChange(changedValues);
+      onChange(changedValues, groupId);
     }
   };
 

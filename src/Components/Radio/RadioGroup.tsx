@@ -4,20 +4,22 @@ import Radio from "./Radio";
 interface IProps {
   name: string;
   defaultValue?: string;
-  onChange?: (checkedValue: string) => void;
+  onChange?: (checkedValue: string, groupId?: string | number) => void;
+  groupId?: string | number;
 }
 
 const RadioGroup: React.FC<IProps> = ({
   name,
   defaultValue,
   onChange,
-  children
+  children,
+  groupId
 }) => {
   // Radio Change handler
   const onRadioChange: React.ChangeEventHandler<HTMLInputElement> = e => {
     // RadioGroup onChange
     if (onChange) {
-      onChange(e.target.value);
+      onChange(e.target.value, groupId);
     }
   };
 

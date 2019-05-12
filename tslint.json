@@ -4,11 +4,13 @@
     "exclude": [
       "config/**/*.js",
       "node_modules/**/*.ts",
-      "coverage/lcov-report/*.js"
+      "coverage/lcov-report/*.js",
+      "src/assets/*.json"
     ]
   },
   "rules": {
     "ordered-imports": false,
-    "no-console": false
+    "no-console": false,
+    "object-literal-sort-keys": false
   }
 }
