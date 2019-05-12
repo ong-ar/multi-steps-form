@@ -22,13 +22,38 @@ const RADIO = 2;
 const TEXTINPUT = 3;
 const SELECTBOX = 4;
 
+const getButtonsState = (indx: number, length: number) => {
+  if (indx > 0 && indx < length - 1) {
+    return {
+      showPreviousBtn: true,
+      showNextBtn: true,
+      showSubmitBtn: false
+    };
+  } else if (indx === 0) {
+    return {
+      showPreviousBtn: false,
+      showNextBtn: true,
+      showSubmitBtn: false
+    };
+  } else {
+    return {
+      showPreviousBtn: true,
+      showNextBtn: false,
+      showSubmitBtn: true
+    };
+  }
+};
+
 const MainForm: React.FC = () => {
   const multiStepId = input.formId;
   const multiStepTitle = input.title;
   const stepItems: IInputItem[] = input.items;
   const stepCount = stepItems.length;
 
-  //   const [currentStep, setCurrentStep] = React.useState(1);
+  const [currentStep, setCurrentStep] = React.useState(0);
+  const [buttonState, setButtonState] = React.useState(
+    getButtonsState(0, stepCount)
+  );
 
   // output 초기화
   const [output, setOutput] = React.useState({
@@ -49,7 +74,6 @@ const MainForm: React.FC = () => {
     });
 
     setOutput(updatedOutput);
-    console.log(updatedOutput);
   };
 
   // checkboxgroup onchange
@@ -57,8 +81,6 @@ const MainForm: React.FC = () => {
     values: string[],
     itemId: string | number
   ) => {
-    console.log(values, itemId);
-
     updateOutput(itemId, values.join());
   };
 
@@ -118,7 +140,9 @@ const MainForm: React.FC = () => {
             defaultValue=""
             itemId={item.itemId}
           >
-            <Option value="" disabled={true} />
+            <Option value="" disabled={true}>
+              선택해주세요.
+            </Option>
             {item.options.map(option => (
               <Option value={option.text} key={option.id}>
                 {option.text}
@@ -130,15 +154,33 @@ const MainForm: React.FC = () => {
     return null;
   };
 
-  console.log(output);
+  const next = () => {
+    if (output.items[currentStep].answer === "") {
+      alert("값을 입력해주세요.");
+      return;
+    }
+    const changedStep = currentStep >= stepCount ? stepCount : currentStep + 1;
+    setCurrentStep(changedStep);
+    setButtonState(getButtonsState(changedStep, stepCount));
+  };
 
-  //   const next = () => {
-  //     setCurrentStep(currentStep >= stepCount ? stepCount : currentStep + 1);
-  //   };
+  const prev = () => {
+    const changedStep = currentStep <= 0 ? 0 : currentStep - 1;
+    setCurrentStep(changedStep);
+    setButtonState(getButtonsState(changedStep, stepCount));
+  };
 
-  //   const prev = () => {
-  //     setCurrentStep(currentStep <= 1 ? 1 : currentStep - 1);
-  //   };
+  const submit = () => {
+    const emptyItems = output.items.filter(item => item.answer === "");
+    if (emptyItems.length > 0) {
+      alert(
+        emptyItems.map(item => item.id).join() +
+          "번째 폼의 값 입력이 필요합니다."
+      );
+      return;
+    }
+    console.log(output);
+  };
 
   return (
     <div>
@@ -146,11 +188,33 @@ const MainForm: React.FC = () => {
       {stepItems.map((stepItem: IInputItem, index) => {
         return (
           <div key={index}>
-            <div>{stepItem.title}</div>
-            {convertItemToStep(stepItem)}
+            <div style={currentStep === index ? {} : { display: "none" }}>
+              <div>{stepItem.title}</div>
+              {convertItemToStep(stepItem)}
+            </div>
           </div>
         );
       })}
+      <div>
+        <button
+          onClick={prev}
+          style={buttonState.showPreviousBtn ? {} : { display: "none" }}
+        >
+          prev
+        </button>
+        <button
+          onClick={next}
+          style={buttonState.showNextBtn ? {} : { display: "none" }}
+        >
+          next
+        </button>
+        <button
+          onClick={submit}
+          style={buttonState.showSubmitBtn ? {} : { display: "none" }}
+        >
+          submit
+        </button>
+      </div>
     </div>
   );
 };
