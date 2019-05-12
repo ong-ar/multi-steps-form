@@ -5,7 +5,7 @@ interface IProps {
   name?: string;
   defaultValues?: string[];
   onChange?: (checkedValue: string[], groupId?: string | number) => void;
-  groupId?: string | number;
+  groupId?: string | number; // 부모노드에서 ID가 필요할 경우 사용
 }
 
 const CheckboxGroup: React.FC<IProps> = ({

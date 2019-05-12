@@ -22,6 +22,7 @@ const RADIO = 2;
 const TEXTINPUT = 3;
 const SELECTBOX = 4;
 
+// 버튼 노출 상태 계산 함수
 const getButtonsState = (indx: number, length: number) => {
   if (indx > 0 && indx < length - 1) {
     return {
@@ -55,7 +56,7 @@ const MainForm: React.FC = () => {
     getButtonsState(0, stepCount)
   );
 
-  // output 초기화
+  // output 초기화 (items 길이만큼 itemId 는 유지)
   const [output, setOutput] = React.useState({
     id: multiStepId,
     items: Array.from(new Array(stepCount), (v, k) => {
@@ -63,6 +64,7 @@ const MainForm: React.FC = () => {
     })
   });
 
+  // output item 찾아 answer 값 변경
   const updateOutput = (itemId: string | number, value: string) => {
     const updatedOutput = output;
     updatedOutput.items = updatedOutput.items.map(item => {
@@ -154,7 +156,9 @@ const MainForm: React.FC = () => {
     return null;
   };
 
+  // 다음 스텝 버튼
   const next = () => {
+    // 해당 스텝 빈값일 경우
     if (output.items[currentStep].answer === "") {
       alert("값을 입력해주세요.");
       return;
@@ -164,13 +168,16 @@ const MainForm: React.FC = () => {
     setButtonState(getButtonsState(changedStep, stepCount));
   };
 
+  // 이전 스텝 버튼
   const prev = () => {
     const changedStep = currentStep <= 0 ? 0 : currentStep - 1;
     setCurrentStep(changedStep);
     setButtonState(getButtonsState(changedStep, stepCount));
   };
 
+  // 제출 버튼
   const submit = () => {
+    // 제출 전 빈 값이 있는지 전체적으로 확인
     const emptyItems = output.items.filter(item => item.answer === "");
     if (emptyItems.length > 0) {
       alert(
@@ -179,6 +186,7 @@ const MainForm: React.FC = () => {
       );
       return;
     }
+    // 문제 없을 경우 output 출력
     console.log(output);
   };
 

@@ -56,4 +56,4 @@ $ yarn add react-router-dom && yarn add @types/react-router-dom --dev
 - [x] RadioGroup
 - [x] TextInput
 - [x] SelectBox
-- [ ] MultiStepForm
+- [x] MultiStepForm
