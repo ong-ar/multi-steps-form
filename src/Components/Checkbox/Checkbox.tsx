@@ -1,14 +1,14 @@
 import * as React from "react";
 
 interface IProps {
-  name: string;
-  value: string;
+  name?: string;
+  value?: string;
   disabled?: boolean;
   checked?: boolean;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const CheckboxPresenter: React.SFC<IProps> = ({
+const Checkbox: React.SFC<IProps> = ({
   name,
   value,
   disabled,
@@ -43,4 +43,4 @@ const CheckboxPresenter: React.SFC<IProps> = ({
   );
 };
 
-export default CheckboxPresenter;
+export default Checkbox;

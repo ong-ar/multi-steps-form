@@ -1,2 +1,3 @@
-import CheckboxPresenter from "./CheckboxPresenter";
-export default CheckboxPresenter;
+import Checkbox from "./Checkbox";
+import CheckboxGroup from "./CheckboxGroup";
+export { Checkbox, CheckboxGroup };
