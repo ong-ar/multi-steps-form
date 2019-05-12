@@ -3,7 +3,16 @@ import { Checkbox, CheckboxGroup } from "../Checkbox";
 import { Radio, RadioGroup } from "../Radio";
 import { TextInput } from "../TextInput";
 import { Select, Option } from "../Select";
-import input from "../../assets/input.json";
+
+interface IProps {
+  input: IInput;
+}
+
+interface IInput {
+  formId: string | number;
+  title: string;
+  items: IInputItem[];
+}
 
 interface IOption {
   id: string | number;
@@ -45,7 +54,7 @@ const getButtonsState = (indx: number, length: number) => {
   }
 };
 
-const MainForm: React.FC = () => {
+const MainForm: React.FC<IProps> = ({ input }) => {
   const multiStepId = input.formId;
   const multiStepTitle = input.title;
   const stepItems: IInputItem[] = input.items;
