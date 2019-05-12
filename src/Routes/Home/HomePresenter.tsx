@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Checkbox, CheckboxGroup } from "../../Components/Checkbox";
 import { Radio, RadioGroup } from "../../Components/Radio";
+import { TextInput } from "../../Components/TextInput";
 
 const HomePresenter: React.SFC = () => {
   const onCheckboxChange = (values: string[]) => {
@@ -9,6 +10,10 @@ const HomePresenter: React.SFC = () => {
 
   const onRadioChange = (value: string) => {
     console.log(value);
+  };
+
+  const onTextInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    console.log(e.target.value);
   };
   return (
     <div>
@@ -32,6 +37,8 @@ const HomePresenter: React.SFC = () => {
           <Radio value="c">c</Radio>
           <Radio value="d">d</Radio>
         </RadioGroup>
+
+        <TextInput placeholder="test" onChange={onTextInputChange} />
       </div>
     </div>
   );
