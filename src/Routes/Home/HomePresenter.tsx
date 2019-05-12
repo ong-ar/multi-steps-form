@@ -6,10 +6,7 @@ const HomePresenter: React.SFC = () => {
   const onSubmit = (output: IOutput) => console.log(output);
   return (
     <div>
-      멀티 스텝 폼
-      <div>
-        <MultiStepForm input={input} onSubmit={onSubmit} />
-      </div>
+      <MultiStepForm input={input} onSubmit={onSubmit} />
     </div>
   );
 };
