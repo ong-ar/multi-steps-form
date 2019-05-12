@@ -13,7 +13,7 @@ const CheckboxGroup: React.FC<IProps> = ({
   onChange,
   children
 }) => {
-  const [values, setValues] = React.useState(defaultValues || []);
+  const [values, setValues] = React.useState<string[]>(defaultValues || []);
 
   // Checkbox Change handler
   const onCheckboxChange: React.ChangeEventHandler<HTMLInputElement> = e => {
@@ -34,7 +34,6 @@ const CheckboxGroup: React.FC<IProps> = ({
   };
 
   const checkboxGroup = {
-    defaultValues,
     name,
     onChange: onCheckboxChange
   };
@@ -43,12 +42,19 @@ const CheckboxGroup: React.FC<IProps> = ({
     children,
     (child: React.ReactElement) => {
       if (child && child.type === Checkbox) {
-        console.log("checkbox", child);
-        return React.cloneElement(child, {
-          ...checkboxGroup
-        });
+        // defaultValues 적용
+        if (defaultValues && defaultValues.includes(child.props.value)) {
+          return React.cloneElement(child, {
+            ...checkboxGroup,
+            checked: true
+          });
+        } else {
+          return React.cloneElement(child, {
+            ...checkboxGroup,
+            checked: false
+          });
+        }
       } else {
-        console.log("etc", child);
         return child;
       }
     }

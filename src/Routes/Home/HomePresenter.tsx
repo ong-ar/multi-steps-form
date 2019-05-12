@@ -9,7 +9,11 @@ const HomePresenter: React.SFC = () => {
     <div>
       멀티 스텝 폼
       <div>
-        <CheckboxGroup name="abc" onChange={onChange}>
+        <CheckboxGroup
+          name="abc"
+          onChange={onChange}
+          defaultValues={["a", "b"]}
+        >
           <Checkbox value="a">a</Checkbox>
           <Checkbox value="b">b</Checkbox>
           <Checkbox value="c">c</Checkbox>

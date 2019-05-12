@@ -34,7 +34,7 @@ const Checkbox: React.SFC<IProps> = ({
         name={name}
         value={value}
         disabled={disabled}
-        checked={checked}
+        defaultChecked={checked}
         onChange={onChange}
         style={inputStyle}
       />
