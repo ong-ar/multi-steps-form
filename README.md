@@ -60,10 +60,23 @@ $ yarn add react-router-dom && yarn add @types/react-router-dom --dev
 
 ### unit test (jest, enzyme)
 
-- Checkbox
-  - [ ] name
-  - [ ] value
-  - [ ] disabled
-  - [ ] checked
+1. Checkbox
+
+   - [x] name
+   - [x] value
+   - [x] disabled
+   - [x] checked
+
+2. CheckboxGroup
+
+   - [x] checkbox 갯수
+   - [x] name
+   - [x] value (checkbox)
+   - [x] defaultValues
+
+3. Radio
+4. RadioGroup
+5. TextInput
+6. Select
 
 ### storybook
