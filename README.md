@@ -54,6 +54,6 @@ $ yarn add react-router-dom && yarn add @types/react-router-dom --dev
 - [x] CheckboxGroup
 - [x] Radio
 - [x] RadioGroup
-- [ ] TextInput
+- [x] TextInput
 - [ ] SelectBox
 - [ ] MainForm

@@ -2,6 +2,7 @@ import * as React from "react";
 import { Checkbox, CheckboxGroup } from "../../Components/Checkbox";
 import { Radio, RadioGroup } from "../../Components/Radio";
 import { TextInput } from "../../Components/TextInput";
+import { Select, Option } from "../../Components/Select";
 
 const HomePresenter: React.SFC = () => {
   const onCheckboxChange = (values: string[]) => {
@@ -13,6 +14,10 @@ const HomePresenter: React.SFC = () => {
   };
 
   const onTextInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    console.log(e.target.value);
+  };
+
+  const onSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     console.log(e.target.value);
   };
   return (
@@ -39,6 +44,12 @@ const HomePresenter: React.SFC = () => {
         </RadioGroup>
 
         <TextInput placeholder="test" onChange={onTextInputChange} />
+
+        <Select onChange={onSelectChange} defaultValue="2">
+          <Option value="1">1</Option>
+          <Option value="2">2</Option>
+          <Option value="3">3</Option>
+        </Select>
       </div>
     </div>
   );
