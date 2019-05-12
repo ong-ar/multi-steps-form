@@ -1,2 +1,2 @@
-import MultiStepForm from "./MultiStepForm";
-export default MultiStepForm;
+import { MultiStepForm, IOutput } from "./MultiStepForm";
+export { MultiStepForm, IOutput };

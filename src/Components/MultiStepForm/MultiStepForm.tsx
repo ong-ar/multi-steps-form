@@ -6,6 +6,7 @@ import { Select, Option } from "../Select";
 
 interface IProps {
   input: IInput;
+  onSubmit?: (output: IOutput) => void;
 }
 
 interface IInput {
@@ -26,6 +27,17 @@ interface IInputItem {
   options: IOption[];
 }
 
+interface IOutput {
+  id: string | number;
+  items: IOutputItem[];
+}
+
+interface IOutputItem {
+  id: string | number;
+  answer: string;
+}
+
+// formtype
 const CHECKBOX = 1;
 const RADIO = 2;
 const TEXTINPUT = 3;
@@ -54,7 +66,7 @@ const getButtonsState = (indx: number, length: number) => {
   }
 };
 
-const MainForm: React.FC<IProps> = ({ input }) => {
+const MultiStepForm: React.FC<IProps> = ({ input, onSubmit }) => {
   const multiStepId = input.formId;
   const multiStepTitle = input.title;
   const stepItems: IInputItem[] = input.items;
@@ -196,7 +208,9 @@ const MainForm: React.FC<IProps> = ({ input }) => {
       return;
     }
     // 문제 없을 경우 output 출력
-    console.log(output);
+    if (onSubmit) {
+      onSubmit(output);
+    }
   };
 
   return (
@@ -236,4 +250,4 @@ const MainForm: React.FC<IProps> = ({ input }) => {
   );
 };
 
-export default MainForm;
+export { MultiStepForm, IOutput };
