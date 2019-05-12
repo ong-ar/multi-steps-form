@@ -8,7 +8,7 @@ interface IProps {
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const RadioPresenter: React.SFC<IProps> = ({
+const Radio: React.SFC<IProps> = ({
   name,
   value,
   disabled,
@@ -33,7 +33,7 @@ const RadioPresenter: React.SFC<IProps> = ({
         name={name}
         value={value}
         disabled={disabled}
-        checked={checked}
+        defaultChecked={checked}
         onChange={onChange}
         style={inputStyle}
       />
@@ -42,4 +42,4 @@ const RadioPresenter: React.SFC<IProps> = ({
   );
 };
 
-export default RadioPresenter;
+export default Radio;
