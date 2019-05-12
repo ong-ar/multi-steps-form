@@ -40,6 +40,7 @@ const CheckboxGroup: React.FC<IProps> = ({
     onChange: onCheckboxChange
   };
 
+  // children 에 필요한 값 추가
   const customedChildren = React.Children.map(
     children,
     (child: React.ReactElement) => {
