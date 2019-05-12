@@ -58,7 +58,12 @@ $ yarn add react-router-dom && yarn add @types/react-router-dom --dev
 - [x] SelectBox
 - [x] MultiStepForm
 
-### etc
+### unit test (jest, enzyme)
 
-- [ ] unit test (jest, enzyme)
-- [ ] storybook
+- Checkbox
+  - [ ] name
+  - [ ] value
+  - [ ] disabled
+  - [ ] checked
+
+### storybook

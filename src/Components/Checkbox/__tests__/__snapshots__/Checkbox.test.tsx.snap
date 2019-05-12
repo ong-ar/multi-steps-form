@@ -1,0 +1,155 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkbox 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Checkbox />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <input
+          checked={undefined}
+          defaultChecked={undefined}
+          disabled={undefined}
+          name={undefined}
+          onChange={undefined}
+          style={
+                    Object {
+                              "marginLeft": -20,
+                              "position": "absolute",
+                            }
+          }
+          type="checkbox"
+          value={undefined}
+/>,
+        undefined,
+      ],
+      "style": Object {
+        "cursor": "pointer",
+        "paddingLeft": 20,
+        "paddingRight": 10,
+      },
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "checked": undefined,
+          "defaultChecked": undefined,
+          "disabled": undefined,
+          "name": undefined,
+          "onChange": undefined,
+          "style": Object {
+            "marginLeft": -20,
+            "position": "absolute",
+          },
+          "type": "checkbox",
+          "value": undefined,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "input",
+      },
+      undefined,
+    ],
+    "type": "label",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <input
+            checked={undefined}
+            defaultChecked={undefined}
+            disabled={undefined}
+            name={undefined}
+            onChange={undefined}
+            style={
+                        Object {
+                                    "marginLeft": -20,
+                                    "position": "absolute",
+                                  }
+            }
+            type="checkbox"
+            value={undefined}
+/>,
+          undefined,
+        ],
+        "style": Object {
+          "cursor": "pointer",
+          "paddingLeft": 20,
+          "paddingRight": 10,
+        },
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "checked": undefined,
+            "defaultChecked": undefined,
+            "disabled": undefined,
+            "name": undefined,
+            "onChange": undefined,
+            "style": Object {
+              "marginLeft": -20,
+              "position": "absolute",
+            },
+            "type": "checkbox",
+            "value": undefined,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "input",
+        },
+        undefined,
+      ],
+      "type": "label",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;

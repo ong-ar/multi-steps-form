@@ -49,12 +49,12 @@ const CheckboxGroup: React.FC<IProps> = ({
         if (defaultValues && defaultValues.includes(child.props.value)) {
           return React.cloneElement(child, {
             ...checkboxGroup,
-            checked: true
+            defaultChecked: true
           });
         } else {
           return React.cloneElement(child, {
             ...checkboxGroup,
-            checked: false
+            defaultChecked: false
           });
         }
       } else {
