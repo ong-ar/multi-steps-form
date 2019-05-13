@@ -54,8 +54,8 @@ $ yarn run test
 
 ```bash
 $ yarn run build
-# 만약 없다면
-$ yarn global add serve
+# 만약 serve가 없다면
+# $ yarn global add serve
 $ serve -s build
 ```
 
@@ -227,7 +227,7 @@ $ yarn add react-router-dom && yarn add @types/react-router-dom --dev
 
 ---
 
-## MultiStepForm
+### MultiStepForm
 
 ```jsx
 const onSubmit = output => {

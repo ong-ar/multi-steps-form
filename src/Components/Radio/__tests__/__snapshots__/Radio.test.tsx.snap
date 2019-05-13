@@ -18,59 +18,34 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": Array [
+      "children": <label
+        style={
+                Object {
+                        "cursor": "pointer",
+                        "paddingLeft": 20,
+                        "paddingRight": 10,
+                      }
+        }
+>
         <input
-          checked={undefined}
-          defaultChecked={undefined}
-          disabled={undefined}
-          name={undefined}
-          onChange={undefined}
-          style={
-                    Object {
-                              "marginLeft": -20,
-                              "position": "absolute",
-                            }
-          }
-          type="radio"
-          value={undefined}
-/>,
-        undefined,
-      ],
-      "style": Object {
-        "cursor": "pointer",
-        "paddingLeft": 20,
-        "paddingRight": 10,
-      },
+                checked={undefined}
+                defaultChecked={undefined}
+                disabled={undefined}
+                name={undefined}
+                onChange={undefined}
+                style={
+                        Object {
+                                "marginLeft": -20,
+                                "position": "absolute",
+                              }
+                }
+                type="radio"
+                value={undefined}
+        />
+</label>,
     },
     "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "checked": undefined,
-          "defaultChecked": undefined,
-          "disabled": undefined,
-          "name": undefined,
-          "onChange": undefined,
-          "style": Object {
-            "marginLeft": -20,
-            "position": "absolute",
-          },
-          "type": "radio",
-          "value": undefined,
-        },
-        "ref": null,
-        "rendered": null,
-        "type": "input",
-      },
-      undefined,
-    ],
-    "type": "label",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
+    "rendered": Object {
       "instance": null,
       "key": undefined,
       "nodeType": "host",
@@ -125,6 +100,99 @@ ShallowWrapper {
         undefined,
       ],
       "type": "label",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <label
+          style={
+                    Object {
+                              "cursor": "pointer",
+                              "paddingLeft": 20,
+                              "paddingRight": 10,
+                            }
+          }
+>
+          <input
+                    checked={undefined}
+                    defaultChecked={undefined}
+                    disabled={undefined}
+                    name={undefined}
+                    onChange={undefined}
+                    style={
+                              Object {
+                                        "marginLeft": -20,
+                                        "position": "absolute",
+                                      }
+                    }
+                    type="radio"
+                    value={undefined}
+          />
+</label>,
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <input
+              checked={undefined}
+              defaultChecked={undefined}
+              disabled={undefined}
+              name={undefined}
+              onChange={undefined}
+              style={
+                            Object {
+                                          "marginLeft": -20,
+                                          "position": "absolute",
+                                        }
+              }
+              type="radio"
+              value={undefined}
+/>,
+            undefined,
+          ],
+          "style": Object {
+            "cursor": "pointer",
+            "paddingLeft": 20,
+            "paddingRight": 10,
+          },
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "checked": undefined,
+              "defaultChecked": undefined,
+              "disabled": undefined,
+              "name": undefined,
+              "onChange": undefined,
+              "style": Object {
+                "marginLeft": -20,
+                "position": "absolute",
+              },
+              "type": "radio",
+              "value": undefined,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "input",
+          },
+          undefined,
+        ],
+        "type": "label",
+      },
+      "type": "div",
     },
   ],
   Symbol(enzyme.__options__): Object {
