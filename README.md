@@ -56,7 +56,7 @@ $ yarn run test
 $ yarn run build
 # 만약 없다면
 $ yarn global add serve
-$ yarn -s build
+$ serve -s build
 ```
 
 ### packages
