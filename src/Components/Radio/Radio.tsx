@@ -5,6 +5,7 @@ interface IProps {
   value?: string;
   disabled?: boolean;
   checked?: boolean;
+  defaultChecked?: boolean;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
@@ -13,6 +14,7 @@ const Radio: React.SFC<IProps> = ({
   value,
   disabled,
   checked,
+  defaultChecked,
   onChange,
   children
 }) => {
@@ -33,7 +35,8 @@ const Radio: React.SFC<IProps> = ({
         name={name}
         value={value}
         disabled={disabled}
-        defaultChecked={checked}
+        checked={checked}
+        defaultChecked={defaultChecked}
         onChange={onChange}
         style={inputStyle}
       />

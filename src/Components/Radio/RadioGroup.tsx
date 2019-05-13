@@ -36,12 +36,12 @@ const RadioGroup: React.FC<IProps> = ({
         if (defaultValue === child.props.value) {
           return React.cloneElement(child, {
             ...radioGroup,
-            checked: true
+            defaultChecked: true
           });
         } else {
           return React.cloneElement(child, {
             ...radioGroup,
-            checked: false
+            defaultChecked: false
           });
         }
       } else {
