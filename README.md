@@ -36,6 +36,29 @@
 $ create-react-app multi-step-form --scripts-version=react-scripts-ts
 ```
 
+## 프로젝트 명령어
+
+### 개발모드 실행
+
+```bash
+$ yarn run start
+```
+
+### 유닛 테스트
+
+```bash
+$ yarn run test
+```
+
+### production
+
+```bash
+$ yarn run build
+# 만약 없다면
+$ yarn global add serve
+$ yarn -s build
+```
+
 ### packages
 
 ```bash
@@ -95,4 +118,117 @@ $ yarn add react-router-dom && yarn add @types/react-router-dom --dev
 
    - [x] placeholder
 
-### storybook
+## components 사용법
+
+### Checkbox / CheckboxGroup
+
+```jsx
+<Checkbox>text</Checkbox>
+<Checkbox value="text">text</Checkbox>
+
+<CheckboxGroup>
+    <Checkbox value="text">text</Checkbox>
+</CheckboxGroup>
+```
+
+**Checkbox**
+
+| Attribute      | Description                     | Type     |
+| -------------- | ------------------------------- | -------- |
+| name           | 이름                            | string   |
+| value          | 값                              | string   |
+| disabled       | 사용/미사용                     | boolean  |
+| checked        | 체크/미체크                     | boolean  |
+| defaultChecked | 체크/미체크 (렌더링될 때 1회만) | boolean  |
+| onChange       | 변경 이벤트                     | function |
+
+**CheckboxGroup**
+
+| Attribute     | Description                      | Type             |
+| ------------- | -------------------------------- | ---------------- |
+| name          | 이름 (Checkbox 전부 적용)        | string           |
+| defaultValues | 체크 할 값들                     | string[]         |
+| onChange      | 변경 이벤트                      | function         |
+| groupId       | 아이디 (onChange 2번째 파라미터) | string \| number |
+
+### Radio / RadioGroup
+
+```jsx
+<Radio>text</Radio>
+<Radio value="text">text</Radio>
+
+<RadioGroup name="radio">
+    <Radio value="text">text</Radio>
+</RadioGroup>
+```
+
+**Radio**
+
+| Attribute      | Description                     | Type     |
+| -------------- | ------------------------------- | -------- |
+| name           | 이름                            | string   |
+| value          | 값                              | string   |
+| disabled       | 사용/미사용                     | boolean  |
+| checked        | 체크/미체크                     | boolean  |
+| defaultChecked | 체크/미체크 (렌더링될 때 1회만) | boolean  |
+| onChange       | 변경 이벤트                     | function |
+
+**RadioGroup**
+
+| Attribute     | Description                      | Type             |
+| ------------- | -------------------------------- | ---------------- |
+| name          | 이름 (Radio 전부 적용)           | string           |
+| defaultValues | 체크 할 값들                     | string[]         |
+| onChange      | 변경 이벤트                      | function         |
+| groupId       | 아이디 (onChange 2번째 파라미터) | string \| number |
+
+### Select / Option
+
+```jsx
+<Select>
+  <Option value="select">select</Option>
+</Select>
+```
+
+**Select**
+
+| Attribute    | Description                      | Type             |
+| ------------ | -------------------------------- | ---------------- |
+| defaultValue | 선택 할 값                       | boolean          |
+| onChange     | 변경 이벤트                      | function         |
+| itemId       | 아이디 (onChange 2번째 파라미터) | string \| number |
+
+**Option**
+
+| Attribute | Description | Type    |
+| --------- | ----------- | ------- |
+| value     | 값          | string  |
+| disabled  | 사용/미사용 | boolean |
+
+### TextInput
+
+```jsx
+<TextInput placeholder="textinput" />
+```
+
+**TextInput**
+
+| Attribute   | Description                      | Type             |
+| ----------- | -------------------------------- | ---------------- |
+| placeholder | placeholder                      | string           |
+| onChange    | 변경 이벤트                      | function         |
+| itemId      | 아이디 (onChange 2번째 파라미터) | string \| number |
+
+## MultiStepForm
+
+```jsx
+const onSubmit = output => {
+  console.log(output);
+};
+<MultiStepForm input={{}} onSubmit={onSubmit} />;
+```
+
+| Attribute | Description       | Type     |
+| --------- | ----------------- | -------- |
+| input     | JSON (input.json) | JSON     |
+| onSubmit  | 제출 이벤트       | function |
