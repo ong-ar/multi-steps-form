@@ -1,12 +1,12 @@
 import * as React from "react";
-import { MultiStepForm, IOutput } from "../../Components/MultiStepForm";
+import { MultiStepsForm, IOutput } from "../../Components/MultiStepsForm";
 import input from "../../assets/input.json";
 
 const HomePresenter: React.SFC = () => {
   const onSubmit = (output: IOutput) => console.log(output);
   return (
     <div>
-      <MultiStepForm input={input} onSubmit={onSubmit} />
+      <MultiStepsForm input={input} onSubmit={onSubmit} />
     </div>
   );
 };
