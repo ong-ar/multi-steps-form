@@ -75,8 +75,24 @@ $ yarn add react-router-dom && yarn add @types/react-router-dom --dev
    - [x] defaultValues
 
 3. Radio
+
+   - [x] name
+   - [x] value
+   - [x] disabled
+   - [x] checked
+   - [x] defaultChecked
+
 4. RadioGroup
-5. TextInput
-6. Select
+
+   - [x] name
+   - [x] defaultValue
+
+5. Select
+
+   - [x] defaultValue
+
+6. TextInput
+
+   - [x] placeholder
 
 ### storybook
