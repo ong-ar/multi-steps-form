@@ -17,6 +17,19 @@ const RADIO = 2;
 const TEXTINPUT = 3;
 const SELECTBOX = 4;
 
+const stepStyle: React.CSSProperties = {
+  height: 150
+};
+
+const Step: React.FC<IProps> = ({ item, onChange, style }) => {
+  return (
+    <div style={{ ...stepStyle, ...style }}>
+      <div>{item.title}</div>
+      {convertItemToStep(item, onChange)}
+    </div>
+  );
+};
+
 // items(json) -> component 변환 함수
 const convertItemToStep = (
   item: IInputItem,
@@ -64,19 +77,6 @@ const convertItemToStep = (
       );
   }
   return null;
-};
-
-const stepStyle: React.CSSProperties = {
-  height: 150
-};
-
-const Step: React.FC<IProps> = ({ item, onChange, style }) => {
-  return (
-    <div style={{ ...stepStyle, ...style }}>
-      <div>{item.title}</div>
-      {convertItemToStep(item, onChange)}
-    </div>
-  );
 };
 
 export default Step;
