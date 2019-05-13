@@ -30,19 +30,21 @@ const Checkbox: React.SFC<IProps> = ({
   };
 
   return (
-    <label style={labelStyle}>
-      <input
-        type="checkbox"
-        name={name}
-        value={value}
-        disabled={disabled}
-        checked={checked}
-        defaultChecked={defaultChecked}
-        onChange={onChange}
-        style={inputStyle}
-      />
-      {children}
-    </label>
+    <div>
+      <label style={labelStyle}>
+        <input
+          type="checkbox"
+          name={name}
+          value={value}
+          disabled={disabled}
+          checked={checked}
+          defaultChecked={defaultChecked}
+          onChange={onChange}
+          style={inputStyle}
+        />
+        {children}
+      </label>
+    </div>
   );
 };
 

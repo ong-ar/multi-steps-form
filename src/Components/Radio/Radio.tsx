@@ -29,19 +29,21 @@ const Radio: React.SFC<IProps> = ({
     paddingRight: 10
   };
   return (
-    <label style={labelStyle}>
-      <input
-        type="radio"
-        name={name}
-        value={value}
-        disabled={disabled}
-        checked={checked}
-        defaultChecked={defaultChecked}
-        onChange={onChange}
-        style={inputStyle}
-      />
-      {children}
-    </label>
+    <div>
+      <label style={labelStyle}>
+        <input
+          type="radio"
+          name={name}
+          value={value}
+          disabled={disabled}
+          checked={checked}
+          defaultChecked={defaultChecked}
+          onChange={onChange}
+          style={inputStyle}
+        />
+        {children}
+      </label>
+    </div>
   );
 };
 

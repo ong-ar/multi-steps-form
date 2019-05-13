@@ -213,14 +213,41 @@ const MultiStepForm: React.FC<IProps> = ({ input, onSubmit }) => {
     }
   };
 
+  // form css
+  const formStyle: React.CSSProperties = {
+    width: 500,
+    height: 300,
+    marginLeft: 10,
+    paddingLeft: 20,
+    border: "1px solid #EEE"
+  };
+
+  // title css
+  const h2Style: React.CSSProperties = {
+    fontSize: "2em",
+    color: "#1dccaa"
+  };
+
+  // step css
+  const stepStyle: React.CSSProperties = {
+    height: 150
+  };
+
   return (
-    <div>
-      <div>{multiStepTitle}</div>
+    <div style={formStyle}>
+      <h2 style={h2Style}>{multiStepTitle}</h2>
       {stepItems.map((stepItem: IInputItem, index) => {
         return (
           <div key={index}>
-            <div style={currentStep === index ? {} : { display: "none" }}>
+            <div
+              style={
+                currentStep === index
+                  ? stepStyle
+                  : { ...stepStyle, display: "none" }
+              }
+            >
               <div>{stepItem.title}</div>
+              <br />
               {convertItemToStep(stepItem)}
             </div>
           </div>
@@ -229,7 +256,7 @@ const MultiStepForm: React.FC<IProps> = ({ input, onSubmit }) => {
       <div>
         <button
           onClick={prev}
-          style={buttonState.showPreviousBtn ? {} : { display: "none" }}
+          disabled={buttonState.showPreviousBtn ? false : true}
         >
           prev
         </button>
