@@ -151,6 +151,8 @@ $ yarn add react-router-dom && yarn add @types/react-router-dom --dev
 | onChange      | 변경 이벤트                      | function         |
 | groupId       | 아이디 (onChange 2번째 파라미터) | string \| number |
 
+---
+
 ### Radio / RadioGroup
 
 ```jsx
@@ -182,6 +184,8 @@ $ yarn add react-router-dom && yarn add @types/react-router-dom --dev
 | onChange      | 변경 이벤트                      | function         |
 | groupId       | 아이디 (onChange 2번째 파라미터) | string \| number |
 
+---
+
 ### Select / Option
 
 ```jsx
@@ -205,6 +209,8 @@ $ yarn add react-router-dom && yarn add @types/react-router-dom --dev
 | value     | 값          | string  |
 | disabled  | 사용/미사용 | boolean |
 
+---
+
 ### TextInput
 
 ```jsx
@@ -218,6 +224,8 @@ $ yarn add react-router-dom && yarn add @types/react-router-dom --dev
 | placeholder | placeholder                      | string           |
 | onChange    | 변경 이벤트                      | function         |
 | itemId      | 아이디 (onChange 2번째 파라미터) | string \| number |
+
+---
 
 ## MultiStepForm
 
