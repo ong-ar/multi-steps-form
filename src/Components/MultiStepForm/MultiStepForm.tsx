@@ -207,7 +207,7 @@ const MultiStepForm: React.FC<IProps> = ({ input, onSubmit }) => {
       );
       return;
     }
-    // 문제 없을 경우 output 출력
+    // onSubmit 함수 props 가 있을 경우
     if (onSubmit) {
       onSubmit(output);
     }
