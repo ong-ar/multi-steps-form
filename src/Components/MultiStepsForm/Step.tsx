@@ -17,11 +17,11 @@ const RADIO = 2;
 const TEXTINPUT = 3;
 const SELECTBOX = 4;
 
-const stepStyle: React.CSSProperties = {
-  height: 150
-};
-
 const Step: React.FC<IProps> = ({ item, onChange, style }) => {
+  const stepStyle: React.CSSProperties = {
+    height: 150
+  };
+
   return (
     <div style={{ ...stepStyle, ...style }}>
       <div>{item.title}</div>
