@@ -4,6 +4,84 @@
 - functional programming (함수형 프로그래밍)
 - hooks (state, effect, ...)
 
+## 구동 방식
+
+### 필수 소프트웨어
+
+- yarn 0.25+
+
+### 설명
+
+create-react-app 으로 eject 안 한 상태에서 프로젝트를 진행했습니다.
+
+개발자 모드로 실행하실려면
+
+```bash
+$ yarn && yarn run start
+```
+
+http://localhost:3000 or http://로컬아이피:3000
+
+빌드하여 프로덕트 모드로 실행하시려면
+
+```bash
+$ yarn && yarn build && yarn global add serve && serve -s build
+```
+
+http://localhost:5000 or http://로컬아이피:5000
+
+위 포트는 기본 설정에 의한 포트입니다.
+
+패키지는 react-app-polyfill, react-router-dom, enzyme 관련 이외에는 설치하지 않았습니다.
+
+오로지 CRA 에 의존하여 구현하였습니다.
+
+typescript, 함수형 프로그래밍으로 구현하였습니다.
+
+프로젝트 구조는
+
+```
+multi-steps-form
+├── README.md
+├── node_modules
+├── package.json
+├── .gitignore
+├── images.d.ts
+├── json.d.ts # json 파일 로드를 위해 필요함
+├── ts 관련 설정 파일
+├── .gitignore
+├── public
+│   ├── favicon.ico
+│   ├── index.html
+│   └── manifest.json
+└── src
+    ├── Componenets # 컴포넌트
+        ├── Checkbox # 체크박스 인풋
+            ├── __tests__ # 유닛테스트 폴더
+        ├── Radio # 라디오 인풋
+        ├── Select # 셀렉트
+        ├── TextInput # 텍스트인풋
+        └── MultiStepsForm # 멀티스텝폼
+    ├── Routes # 라우트
+        ├── App # 라우트 설정
+        └── Home # root page (/)
+    ├── assets # input.json
+        └── input.json
+    ├── setupTests.ts # jest 사용하기 위한 파일
+    ├── index.css
+    └── index.tsx
+```
+
+각 입력 엘리먼트들을 컴포넌트화 시켰고, formType 에 따라 Step을 생성하여 표현하도록 구현하였습니다.
+
+유닛테스트 관련 파일은 각 컴포넌트 폴더 내 `__tests__` 폴더에 있고
+
+실행 스크립트는
+
+```bash
+$ yarn run test
+```
+
 ## 요구사항
 
 ### 라이브러리
